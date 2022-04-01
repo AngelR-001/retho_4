@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 });
 
 
-//Rutapara crear registros nuevos
+//Ruta para crear registros nuevos
 
 router.get('/create', (req, res)=>{
     res.render ('create')
