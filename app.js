@@ -13,7 +13,7 @@ dotenv.config({path:'./env/.env'});
 app.use('/resources', express.static('public'));
 app.use('/resource', express.static(__dirname + '/public'));
 
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const session = require('express-session');
 app.use(session({
@@ -24,9 +24,10 @@ app.use(session({
 
 }))
 
-const conexion = require('./database/db');
+const bcryptjs = require('bcryptjs');
 
 app.use('/', require('./router'))
+
 
 app.listen(3000, () => {
     console.log('Server corriendo en http://localhost:3000')

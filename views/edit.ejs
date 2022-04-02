@@ -35,6 +35,14 @@
         </div>
     </nav>
 
+    <% if(login){ %> 
+      <h1>El usuario conectado es: <% name %> </h1>
+      <a href="logout" class="btn btn-danger" id="a-logout">Cerrar sesión</a>
+    <% }else{ %>
+      <h1><% name %> </h1>
+      <a href="index" class="btn btn-danger" id="a-login">Iniciar Sesión</a>
+    <% } %>
+
     <% if (user) { %>
 
     <div class="container mt-4">
