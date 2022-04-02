@@ -42,6 +42,12 @@
                     <th scope="col">ID</th>
                     <th>Usuario</th>
                     <th>Rol</th>
+                    <th>Fecha solicitada</th>
+                    <th>RFC</th>
+                    <th>Numero de empleado</th>
+                    <th>Lugar</th>
+                    <th>Dias solicitados</th>
+                    <th>Dias restantes</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -49,8 +55,14 @@
                 <% results.forEach((user)=> { %>
                 <tr>
                     <td><%= user.id %></td>
-                    <td><%= user.user %></td>
+                    <td><%= user.Usuario %></td>
                     <td><%= user.rol %></td>
+                    <td><%= user.FechaSolicitada %></td>
+                    <td><%= user.rfc %></td>
+                    <td><%= user.Nempleado %></td>
+                    <td><%= user.Lugar %></td>
+                    <td><%= user.DiasSol %></td>
+                    <td><%= user.DiasRes %></td>
                     <td>
                         <a href="/edit/<%= user.id %>" class="btn btn-outline-info">Editar</a>
                         <a href="/delete/<%= user.id %>" class="btn btn-outline-danger">Borrar</a>

@@ -1,18 +1,29 @@
 const express = require("express")
 const router = express.Router();
 const conexion = require('./database/db')
-
+var bcryptjs = require('bcryptjs');
 
 //Mostrar los registros
- router.get('/', (req, res) => {
-     conexion.query('SELECT * FROM usuarios', (error, results)=> {
-         if(error){
+router.get('/tabla', (req, res) => {
+    conexion.query('SELECT * FROM usuarios', (error, results)=> {
+        if(error){
             throw error;
-         }else{
-            res.render('index.ejs', {results:results});
-         }
-     })
+        }else{
+            res.render('tabla', {results:results});
+        }
+    })
+});
+
+
+//Mostrar la pagina de inicio de sesión 
+ router.get('/', (req, res) => {
+     try {
+        res.render('index')
+     } catch (error) {
+         console.log("Error al mostrar la página")
+     }
  });
+
 
 router.post('/login', async (req, res) => {
 
@@ -21,7 +32,7 @@ router.post('/login', async (req, res) => {
     //let passwordHaash = await bcrypt.hash(password, 8);
     if(user && password){
         
-        await connection.query('SELECT * FROM usuarios WHERE rfc = ?', [user], async (req, res) => {
+        await conexion.query('SELECT * FROM usuarios WHERE rfc = ?', [user], async (req, resultado) => {
 
             if(resultado.length == 0 || !(await bcryptjs.compare(password, resultado[0].password))){
                 res.render('index', {
@@ -42,7 +53,7 @@ router.post('/login', async (req, res) => {
                     alertMessage:"Inicio de sesión exitoso",
                     alertIcon: "success",
                     showConfirmButton:false,
-                    timer:1500,
+                    timer:90000000000,
                     ruta:''
                 })
             }
@@ -56,7 +67,7 @@ router.post('/login', async (req, res) => {
             alertMessage:"Por favor ingrese usuario y contraseña",
             alertIcon: "warning",
             showConfirmButton:true,
-            timer:1500,
+            timer:90000000000,
             ruta:'index'
         })
     }
