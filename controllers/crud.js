@@ -13,12 +13,13 @@ exports.save = (req, res) => {
         if(error){
             console.log(error)
         }else{
-            res.redirect('/')
+            res.redirect('/tabla')
         }
     })
 };
 
 exports.update = (req, res) => {
+    const id = req.body.id;
     const usuario = req.body.user;
     const rol = req.body.rol;
     const FechaSolicitada = req.body.FechaSolicitada;
@@ -31,7 +32,7 @@ exports.update = (req, res) => {
         if(error){
             console.log(error)
         }else{
-            res.redirect('/')
+            res.redirect('/tabla')
         }
     })
 };

@@ -112,20 +112,20 @@ router.get('/delete/:id', (req, res) => {
         if(error){
             throw error;
         }else{
-            res.redirect('/')
+            res.redirect('/tabla')
         }
     })
 })
 
 
 //Ruta para editar registros
-router.get('/edit/:id', (req, res) => {
+router.get('/editar/:id', (req, res) => {
     const id = req.params.id;
     conexion.query('SELECT * FROM usuarios WHERE id=?', [id], (error,results) => {
         if(error){
             throw error;
         }else{
-            res.render('edit', {user:results[0]})
+            res.render('editar', {user:results[0]})
         }
     })
 })
