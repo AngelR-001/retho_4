@@ -82,7 +82,7 @@
 
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -125,12 +125,12 @@
               <form action="/save" method="POST">
                   <div class="mb-3">
                       <label for="user" class="form-label">Nombre</label>
-                      <input type="text" class="form-control" name="user" id="user" tabindex="1">
+                      <input type="text" class="form-control" name="user" id="user" tabindex="1" required>
                   </div>
 
                   <div class="mb-3">
                       <label for="user" class="form-label">Rol</label>
-                      <select name="rol" id="rol" class="form-select">
+                      <select name="rol" id="rol" class="form-select" required>
                           <option value="admin" selected>Admin</option>
                           <option value="data entry">Data entry</option>
                       </select>
@@ -138,17 +138,17 @@
 
                   <div class="mb-3">
                     <label for="FechaSolicitada" class="form-label">Fecha Solicitada</label><br>
-                    <input type="date" name="FechaSolicitada" id="FechaSolicitada"><br> 
+                    <input type="date" name="FechaSolicitada" id="FechaSolicitada" required><br> 
                   </div>
 
                   <div class="mb-3">
                     <label for="rfc" class="form-label">RFC</label><br>
-                    <input type="text" name="rfc" id="rfc"><br> 
+                    <input type="text" name="rfc" id="rfc" required><br> 
                   </div>
 
                   <div class="mb-3">
                     <label for="Nempleado" class="form-label">Numero de empleado</label><br> 
-                    <input type="number" name="Nempleado" id="Nempleado">
+                    <input type="number" name="Nempleado" id="Nempleado" required>
                   </div>
 
                   <div class="mb-3">
@@ -158,12 +158,12 @@
 
                   <div class="mb-3">
                     <label for="DiasSol" class="form-label">Dias solicitados</label><br> 
-                    <input type="number" name="DiasSol" id="DiasSol">
+                    <input type="number" name="DiasSol" id="DiasSol" required>
                   </div>
 
                   <div class="mb-3">
                     <label for="DiasRes" class="form-label">Dias restantes</label><br> 
-                    <input type="number" name="DiasRes" id="DiasRes" readonly="readonly">
+                    <input type="number" name="DiasRes" id="DiasRes" readonly="readonly" >
                   </div>
 
                   <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
