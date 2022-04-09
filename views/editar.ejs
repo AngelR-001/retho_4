@@ -82,7 +82,7 @@
 
 
  <!doctype html>
- <html lang="en">
+ <html lang="es">
    <head>
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -128,12 +128,12 @@
                    <input id="id" name="id" value="<%= user.id %>" hidden>
                    <div class="mb-3">
                        <label for="user" class="form-label">Nombre</label>
-                       <input type="text" class="form-control" name="user" id="user" tabindex="1" value="<%= user.Usuario %>">
+                       <input type="text" class="form-control" name="user" id="user" tabindex="1"  value="<%= user.Usuario %>" required>
                    </div>
  
                    <div class="mb-3">
                        <label for="user" class="form-label">Rol</label>
-                       <select name="rol" id="rol" class="form-select">
+                       <select name="rol" id="rol" class="form-select" required>
                            <option value="admin" selected>Admin</option>
                            <option value="data entry">Data entry</option>
                        </select>
@@ -141,17 +141,17 @@
  
                    <div class="mb-3">
                      <label for="FechaSolicitada" class="form-label">Fecha Solicitada</label><br>
-                     <input type="date" name="FechaSolicitada" id="FechaSolicitada" value="<%= user.FechaSolicitada %>"><br> 
+                     <input type="date" name="FechaSolicitada" id="FechaSolicitada" value="<%= user.FechaSolicitada %>" required><br> 
                    </div>
  
                    <div class="mb-3">
                      <label for="rfc" class="form-label">RFC</label><br>
-                     <input type="text" name="rfc" id="rfc" value="<%= user.rfc %>"><br> 
+                     <input type="text" name="rfc" id="rfc" value="<%= user.rfc %>" required><br> 
                    </div>
  
                    <div class="mb-3">
                      <label for="Nempleado" class="form-label">Numero de empleado</label><br> 
-                     <input type="number" name="Nempleado" id="Nempleado" value="<%= user.Nempleado %>">
+                     <input type="number" name="Nempleado" id="Nempleado" value="<%= user.Nempleado %>" required>
                    </div>
  
                    <div class="mb-3">
@@ -161,7 +161,7 @@
  
                    <div class="mb-3">
                      <label for="DiasSol" class="form-label">Dias solicitados</label><br> 
-                     <input type="number" name="DiasSol" id="DiasSol" value="<%= user.DiasSol %>">
+                     <input type="number" name="DiasSol" id="DiasSol" value="<%= user.DiasSol %>" required>
                    </div>
  
                    <div class="mb-3">

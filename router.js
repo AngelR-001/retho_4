@@ -27,34 +27,34 @@ router.get('/tabla', (req, res) => {
 
 router.post('/login', async (req, res) => {
 
-    const user = req.body.user;
-    const password = req.body.password;
+    const usuario = req.body.user;
+    const rfc = req.body.password;
     //let passwordHaash = await bcrypt.hash(password, 8);
-    if(user && password){
+    if(usuario && rfc){
         
-        await conexion.query('SELECT * FROM usuarios WHERE rfc = ?', [user], async (req, resultado) => {
+        await conexion.query('SELECT * FROM usuarios WHERE rfc = ?', [usuario], async (req, resultado) => {
 
-            if(resultado.length == 0 || !(await bcryptjs.compare(password, resultado[0].password))){
+            if(resultado.length == 0 || !(await bcryptjs.compare(rfc, resultado[0].password))){
                 res.render('index', {
                     alert:true,
                     alertTitle: "Error",
                     alertMessage:"Usuario o contraseña incorrectos",
                     alertIcon: "error",
                     showConfirmButton:true,
-                    timer:false,
-                    ruta:'index'
+                    timer:100000000000,
+                    ruta:'tabla'
                 })
             }else{
                 req.session.loggedin = true
-                req.session.nombre = resultado[0].nombre;
+                req.session.usuario = resultado[0].usuario;
                 res.render('index', {
                     alert:true,
                     alertTitle: "Inicio de sesión",
                     alertMessage:"Inicio de sesión exitoso",
                     alertIcon: "success",
                     showConfirmButton:false,
-                    timer:90000000000,
-                    ruta:''
+                    timer:10000000000,
+                    ruta:'tabla'
                 })
             }
 
