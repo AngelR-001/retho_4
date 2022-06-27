@@ -5,14 +5,14 @@ exports.save = (req, res) => {
     const rol = req.body.rol;
     const FechaSolicitada = req.body.FechaSolicitada;
     const rfc = req.body.rfc;
-    const NEmpleado = req.body.NEmpleado;
+    const Nempleado = req.body.Nempleado;
     const lugar = req.body.lugar;
     const DiasSol = req.body.DiasSol;
     const DiasRes1 = 12-DiasSol;
     const DiasRes = DiasRes1;
 
     if(DiasSol<=2){
-        conexion.query('INSERT INTO usuarios SET ?', {usuario:usuario, rol:rol, FechaSolicitada:FechaSolicitada, rfc:rfc, NEmpleado:NEmpleado, lugar:lugar, DiasSol:DiasSol, DiasRes:DiasRes}, (error, results)=>{
+        conexion.query('INSERT INTO usuarios SET ?', {usuario:usuario, rol:rol, FechaSolicitada:FechaSolicitada, rfc:rfc, NEmpleado:Nempleado, lugar:lugar, DiasSol:DiasSol, DiasRes:DiasRes}, (error, results)=>{
             if(error){
                 console.log(error)
             }else{
@@ -30,14 +30,13 @@ exports.update = (req, res) => {
     const rol = req.body.rol;
     const FechaSolicitada = req.body.FechaSolicitada;
     const rfc = req.body.rfc;
-    const NEmpleado = req.body.NEmpleado;
+    const Nempleado = req.body.Nempleado;
     const lugar = req.body.lugar;
+    const DiasSol = req.body.DiasSol;
     const DiasRes1 = 12-DiasSol;
     const DiasRes = DiasRes1;
 
-    
-
-    conexion.query('UPDATE usuarios SET ? WHERE id=?', [{usuario:usuario, rol:rol, FechaSolicitada:FechaSolicitada, rfc:rfc, NEmpleado:NEmpleado, lugar:lugar, DiasSol:DiasSol, DiasRes:DiasRes}, id], (error,results) => {
+    conexion.query('UPDATE usuarios SET ? WHERE id=?', [{usuario:usuario, rol:rol, FechaSolicitada:FechaSolicitada, rfc:rfc, NEmpleado:Nempleado, lugar:lugar, DiasSol:DiasSol, DiasRes:DiasRes}, id], (error,results) => {
         if(error){
             console.log(error)
         }else{

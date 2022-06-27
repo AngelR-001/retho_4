@@ -92,6 +92,13 @@ router.get('/', (req, res) => {
 
 })
 
+
+//Formato de impresion
+router.get('/formato', (req, res)=>{
+    res.render ('formato')
+});
+
+
 //Ruta para crear registros nuevos
 
 router.get('/create', (req, res)=>{
