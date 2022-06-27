@@ -6,22 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hospital Materno Infantil</title>
     <link rel="stylesheet" href="estilos de contacto.css">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<body style="font-family: 'Roboto', sans-serif;">
   
   <div class="container-xxl">
   
   <header>
-        <hr><h1 Style="background:#FF7B54; color: hsl(0, 0%, 0%)"><b><center>HOSPITAL MATERNO INFANTIL</center></b> <hr></h1>
+        <hr><h1 Style="background:linear-gradient(to bottom right,rgb(0, 174, 255), rgba(0, 174, 255, 0.295)); color: hsl(0, 0%, 0%)"><b><center>HOSPITAL MATERNO INFANTIL</center></b> <hr></h1>
     </header>
 
     <form action="">
        
      <div>
-        <h4>Irapuato, Gto. A: <input type="number" name="Dia" placeholder="Dia"> De: <input type="number" name="Mes" placeholder="Mes"> Del: <input type="number" name="Año" placeholder="Año"></h4>
+        <h4>Irapuato, Gto. A: <input type="number" name="Dia" placeholder="Dia" min="1" max="31"> De: <input type="number" name="Mes" placeholder="Mes" min="1" max="12"> Del: <input type="number" name="Año" placeholder="Año" min="1900"></h4>
         <hr>
 
-        <h4>RFC: <input type="number" name="RFC" placeholder="Ponga su RFC"> No. De Control de Asistencia: <input type="number" name="Asistencia" placeholder="Numero de Control de Asistencia"
+        <h4>RFC: <input type="text" name="RFC" placeholder="Ponga su RFC"> No. De Control de Asistencia: <input type="number" name="Asistencia" placeholder="Numero de Control de Asistencia"
         <hr>
 
         <h4>Nombre: <input type="text" name="Nombre" placeholder="Coloque su Nombre">
@@ -50,7 +52,7 @@
 
       </div>
       <div>
-        <h4>Salida: <input type="number" name="Salida" placeholder="Hora de Salida"> Regreso: <input type="number" name="Regreso" placeholder="Hora de Regreso"> Tiempo Transcurrido: <input type="number" name="Tiempo" placeholder="Tiempo Transcurrido"></h4>
+        <h4>Salida: <input type="number" name="Salida" placeholder="Hora de Salida"> Regreso: <input type="number" name="Regreso" placeholder="Hora de Regreso"> <br><br> Tiempo Transcurrido: <input type="number" name="Tiempo" placeholder="Tiempo Transcurrido"></h4>
         <hr> 
       </div>
       <div>
@@ -59,7 +61,7 @@
         </h4>
       </div>
       <div>
-        <h4>Dias Solicitados en el Año:  <input type="number" name="diasaño" placeholder="Dias Solicitados (Año)"> Pendientes: <input type="text" name="Pendientes" placeholder="Agrega los Pendientes que Tienes">    </h4>
+        <h4>Dias Solicitados en el Año:  <input type="number" name="diasaño" placeholder="Dias Solicitados (Año)"> Pendientes: <textarea name="Pendientes" placeholder="Agrega los Pendientes que Tienes"></textarea>    </h4>
       </div>
       <div>
         <h4>Onomastico: <input type="checkbox" name="Ono">
@@ -67,7 +69,7 @@
         </h4>
 
       </div>
-      <button onclick="imprimir()">Imprimir formato</button>
+      <img src="https://img.icons8.com/ios/50/000000/print--v1.png" alt="Imprimir formato" onclick="imprimir()" >
     </form>
   </div> 
 
@@ -76,7 +78,6 @@
       window.print();
     }
   </script>
-
 
 </body>
 </html>
