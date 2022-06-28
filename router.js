@@ -15,17 +15,23 @@ router.get('/tabla', (req, res) => {
 });
 
 
-//Mostrar la pagina de inicio de sesión 
+//Mostrar la pagina de inicio
  router.get('/', (req, res) => {
      try {
-        res.render('index')
+        conexion.query('SELECT * FROM usuarios', (error, results)=> {
+            if(error){
+                throw error;
+            }else{
+                res.render('tabla', {results:results});
+            }
+        })
      } catch (error) {
          console.log("Error al mostrar la página")
      }
  });
 
 
-router.post('/login', async (req, res) => {
+/* router.post('/login', async (req, res) => {
 
     const usuario = req.body.user;
     const rfc = req.body.password;
@@ -91,7 +97,7 @@ router.get('/', (req, res) => {
     }
 
 })
-
+ */
 
 //Formato de impresion
 router.get('/formato', (req, res)=>{
